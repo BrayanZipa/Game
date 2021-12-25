@@ -1,0 +1,39 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: rgba(255, 197, 6, 0.808);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#contenedor{
+    width: 600px;
+    text-align: center;
+    background:darkgoldenrod;
+}
+
+#puntaje{
+    font-size: 18px;
+}
+
+#pregunta{
+    font-size: 25px;
+}
+
+.button{
+    width: 400px;
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 8px; 
+}
+
+.button:hover{
+    cursor: pointer;
+    background: rgb(78, 248, 106);
+}
