@@ -26,4 +26,3 @@ export class Interfaz{
         contenedor.innerHTML = resultado;
     }
 }
-

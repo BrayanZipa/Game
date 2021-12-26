@@ -6,12 +6,7 @@ export class Pregunta{
         this.respuesta = respuesta;
     }
 
-    hola() {
-        return 1+2;
-    }
-
     opcionCorrecta(res) {
-        console.log(res); 
         return res === this.respuesta;
     }
 }

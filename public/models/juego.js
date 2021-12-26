@@ -1,12 +1,17 @@
-import {Pregunta} from "./pregunta.js";
+import {Categoria} from "./categoria.js";
 
 export class Juego{
 
     index = 0;
     puntaje = 0;
+    preguntaAcual = 0;
 
-    constructor(preguntas){
-        this.preguntas = preguntas;
+    /**
+     * 
+     * @param {Categoria[]} categorias 
+     */
+    constructor(categorias){
+        this.categorias = categorias;
     }
 
     /**
@@ -14,21 +19,23 @@ export class Juego{
      * @returns {Pregunta}
      */
     obtenerPregunta(){
-        return this.preguntas[this.index];
+        let aletorio = Math.floor(Math.random() * (5-0) + 0);
+        this.preguntaAcual = aletorio;
+        return this.categorias[this.index].preguntas[aletorio];
     }
 
     /**
      * 
-     * @param {string} respuesta 
+     * @param {string} res
      */
-    respuestaCorrecta(respuesta){        
-        if(this.obtenerPregunta().opcionCorrecta(respuesta)){
+    respuestaCorrecta(res){       
+        if(this.categorias[this.index].preguntas[this.preguntaAcual].opcionCorrecta(res)){
             this.puntaje++;
         }
         this.index++;
     }
 
     finJuego(){
-        return this.preguntas.length === this.index;
+        return this.categorias.length === this.index;
     }
 }
