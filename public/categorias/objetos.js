@@ -1,5 +1,5 @@
-const Pregunta = require('../models/pregunta');
-const json = require('./listaCategorias')
+import {categorias} from './listaCategorias.js';
+import {Pregunta} from '../models/pregunta.js';
 
-export const preguntas = json.map(pregunta => new Pregunta(pregunta.pregunta, pregunta.opciones, pregunta.respuesta))
+export const preguntas = categorias.map(pregunta => new Pregunta(pregunta.pregunta, pregunta.opciones, pregunta.respuesta))
 

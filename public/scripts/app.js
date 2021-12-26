@@ -1,9 +1,26 @@
+import {preguntas} from '../categorias/objetos.js';
+import {Juego} from '../models/juego.js'
 import {Interfaz} from '../models/interfaz.js';
-import {categorias} from '../categorias/listaCategorias.js';
+import { Pregunta } from '../models/pregunta.js';
 
-/* const juego = new Juego(preguntas); */
+function siguientePregunta(juego, interfaz) {
+    if(juego.finJuego()){
+        console.log("Fin");
+    } else{
+        interfaz.mostrarPregunta(juego.obtenerPregunta().pregunta);
+        interfaz.mostrarOpciones(juego.obtenerPregunta().opciones, function (opcionElegida) {
+            juego.respuestaCorrecta(opcionElegida);
+            siguientePregunta(juego, interfaz);
+        }); 
+    }
+}
 
-console.log(categorias);
-const interfaz = new Interfaz();
-interfaz.mostrarPregunta("Esta es la pregunta numero 4");
+function main(){
+    const juego = new Juego(preguntas);
+    const interfaz = new Interfaz();
 
+    siguientePregunta(juego, interfaz);
+      
+}
+
+main();

@@ -1,3 +1,5 @@
+import {Pregunta} from "./pregunta.js";
+
 export class Juego{
 
     index = 0;
@@ -7,20 +9,26 @@ export class Juego{
         this.preguntas = preguntas;
     }
 
-    obtenerIndex(){
+    /**
+     * 
+     * @returns {Pregunta}
+     */
+    obtenerPregunta(){
         return this.preguntas[this.index];
     }
 
-    fin(){
-        return this.preguntas.length === this.index;
-    }
-
-    respuestaCorrecta(respuesta){
-        if(this.obtenerIndex().respuesta(respuesta)){
-            this.puntaje ++;
+    /**
+     * 
+     * @param {string} respuesta 
+     */
+    respuestaCorrecta(respuesta){        
+        if(this.obtenerPregunta().opcionCorrecta(respuesta)){
+            this.puntaje++;
         }
-
         this.index++;
     }
 
+    finJuego(){
+        return this.preguntas.length === this.index;
+    }
 }
