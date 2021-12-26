@@ -5,7 +5,7 @@ import { Pregunta } from '../models/pregunta.js';
 
 function siguientePregunta(juego, interfaz) {
     if(juego.finJuego()){
-        console.log("Fin");
+        interfaz.mostrarResultadoFinal(juego.puntaje);
     } else{
         interfaz.mostrarPregunta(juego.obtenerPregunta().pregunta);
         interfaz.mostrarOpciones(juego.obtenerPregunta().opciones, function (opcionElegida) {

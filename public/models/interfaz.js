@@ -18,6 +18,12 @@ export class Interfaz{
             contenedorRespuestas.append(opcion);
             opcion.addEventListener("click", () => callback(opciones[i]))
         }
-    }   
+    }
+    
+    mostrarResultadoFinal(puntaje){
+        const resultado = `<h1>Puntaje: ${puntaje}</h1>`;
+        const contenedor = document.getElementById('contenedor');
+        contenedor.innerHTML = resultado;
+    }
 }
 
