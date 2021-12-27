@@ -15,7 +15,6 @@ function siguientePregunta(juego, interfaz) {
     }
 }
 
-
 function main(){
     const juego = new Juego(arrayCategorias);
     const interfaz = new Interfaz();
