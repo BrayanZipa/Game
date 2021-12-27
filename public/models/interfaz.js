@@ -28,8 +28,16 @@ export class Interfaz{
     }
     
     mostrarResultadoFinal(puntaje){
-        const resultado = `<h1>Puntaje final: ${puntaje}</h1>`;
+        const resultado = `<h1>Puntaje final: ${puntaje}</h1><br>
+        <hr><br>`;
+
+        const botonRegresar = document.createElement('a');
+        botonRegresar.innerHTML = "Volver a intentar"; 
+        botonRegresar.className = 'button';
+        botonRegresar.href = "/";
+  
         const contenedor = document.getElementById('contenedor');
         contenedor.innerHTML = resultado;
+        contenedor.append(botonRegresar);
     }
 }

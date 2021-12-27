@@ -29,12 +29,14 @@ body{
 }
 
 .button{
+    text-decoration: none;
     width: 400px;
     margin: 5px;
     padding: 10px;
     font-size: 20px;
     border-radius: 8px;
     background-color: rgb(238, 126, 22);
+    color: black;
 }
 
 .button:hover{
