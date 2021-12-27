@@ -7,7 +7,7 @@ function siguientePregunta(juego, interfaz) {
         interfaz.mostrarResultadoFinal(juego.puntaje);
     } else{
         var preguntaActual= juego.obtenerPregunta();
-        interfaz.mostrarPregunta(preguntaActual.pregunta);
+        interfaz.mostrarEncabezados(juego.obtenerCategoria(), juego.obtenerDificultad(), juego.puntaje, preguntaActual.pregunta);
         interfaz.mostrarOpciones(preguntaActual.opciones, function (opcionElegida) {
             juego.respuestaCorrecta(opcionElegida);
             siguientePregunta(juego, interfaz);
@@ -15,11 +15,13 @@ function siguientePregunta(juego, interfaz) {
     }
 }
 
+
 function main(){
     const juego = new Juego(arrayCategorias);
     const interfaz = new Interfaz();
 
-    siguientePregunta(juego, interfaz);      
+    siguientePregunta(juego, interfaz);
+      
 }
 
 main();

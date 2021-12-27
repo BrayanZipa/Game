@@ -4,7 +4,8 @@ html, body{
 }
 
 body{
-    background: rgba(255, 197, 6, 0.808);
+    font-family: cursive;
+    background: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +15,9 @@ body{
 #contenedor{
     width: 600px;
     text-align: center;
-    background:darkgoldenrod;
+    margin-top: 50px;
+    padding: 20px 20px;
+    background:rgba(252, 168, 72, 0.918);
 }
 
 #puntaje{
@@ -30,10 +33,11 @@ body{
     margin: 5px;
     padding: 10px;
     font-size: 20px;
-    border-radius: 8px; 
+    border-radius: 8px;
+    background-color: rgb(238, 126, 22);
 }
 
 .button:hover{
     cursor: pointer;
-    background: rgb(78, 248, 106);
+    background: rgba(238, 42, 7, 0.918);
 }

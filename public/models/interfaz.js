@@ -1,9 +1,16 @@
 export class Interfaz{
     constructor(){  }
 
-    mostrarPregunta(texto){
+    mostrarEncabezados(categoria, dificultad, puntaje, pregunta){
+        const tituloCategoria = document.getElementById('categoria');
+        const tituloDificultad = document.getElementById('dificultad');
+        const tituloPuntaje = document.getElementById('puntaje');
         const tituloPregunta = document.getElementById('pregunta');
-        tituloPregunta.innerHTML = texto;
+
+        tituloCategoria.innerHTML = "Categoría: "+categoria;
+        tituloDificultad.innerHTML = "Dificultad: "+dificultad;
+        tituloPuntaje.innerHTML = "Puntaje: "+puntaje;
+        tituloPregunta.innerHTML = pregunta;
     }
 
     mostrarOpciones(opciones, callback){
@@ -21,7 +28,7 @@ export class Interfaz{
     }
     
     mostrarResultadoFinal(puntaje){
-        const resultado = `<h1>Puntaje: ${puntaje}</h1>`;
+        const resultado = `<h1>Puntaje final: ${puntaje}</h1>`;
         const contenedor = document.getElementById('contenedor');
         contenedor.innerHTML = resultado;
     }

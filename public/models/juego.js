@@ -1,4 +1,5 @@
 import {Categoria} from "./categoria.js";
+import { Pregunta } from "./pregunta.js";
 
 export class Juego{
 
@@ -12,6 +13,14 @@ export class Juego{
      */
     constructor(categorias){
         this.categorias = categorias;
+    }
+
+    obtenerCategoria(){
+        return this.categorias[this.index].categoria;
+    }
+
+    obtenerDificultad(){
+        return this.categorias[this.index].dificultad;
     }
 
     /**
@@ -30,7 +39,7 @@ export class Juego{
      */
     respuestaCorrecta(res){       
         if(this.categorias[this.index].preguntas[this.preguntaAcual].opcionCorrecta(res)){
-            this.puntaje++;
+            this.puntaje += 100;
         }
         this.index++;
     }
